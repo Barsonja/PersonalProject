@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}<title>Homepage</title> {% endblock %}
+
+{% block content %}
+<h1>Prenove</h1>
+
+  <p>Welcome to <em>Our website</em>, here we're just testing stuff out</p>
+
+<h2>Dynamic content</h2>
+
+  <p>Waiting for content =D</p>
+
+<h1>Post List</h1>
+
+    {% if post_list %}
+    <ul>
+
+      {% for post in post_list %}
+      <li>
+        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no posts on our website.</p>
+    {% endif %}
+
+{% endblock %}
