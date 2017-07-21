@@ -5,7 +5,8 @@ from .models import Post
 
 
 def index(request):
-    return render(request, 'index.html')
+    recent_posts = Post.objects.order_by('-date')[:3]
+    return render(request, 'index.html', {'recent_posts': recent_posts})
 
 class PostListView(generic.ListView):
     model = Post
