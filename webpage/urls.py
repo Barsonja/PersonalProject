@@ -19,5 +19,6 @@ from django.views.generic import RedirectView
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^prenovi/', include('prenovi.urls')),
-    url(r'^$', RedirectView.as_view(url='/prenovi/', permanent=True))
+    url(r'^$', RedirectView.as_view(url='/prenovi/', permanent=True)),
+    url(r'^email/', include('send_email.urls')),
 ]

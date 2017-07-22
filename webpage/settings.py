@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'send_email',
     'prenovi.apps.PrenoviConfig',
     'django.contrib.admin',
     'django.contrib.auth',
