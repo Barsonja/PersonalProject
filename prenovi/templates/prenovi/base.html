@@ -9,14 +9,19 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    {% block title %}<title>Homepage</title>{% endblock %}
+    {% block title %}<title>Prenovi</title>{% endblock %}
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
     {% load static %}
     <link href="{% static 'prenovi/css/freelancer.min.css' %}" rel="stylesheet">
+    <link href="{% static 'prenovi/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -28,7 +33,7 @@
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                   <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
               </button>
-              <a class="navbar-brand" href="#page-top">AAL INN KAMNIK</a>
+              <a class="navbar-brand" href="#page-top">Business Name</a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -56,5 +61,52 @@
       {% block content %}
 
       {% endblock %}
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Lokacija</h3>
+                        <p>Neki random
+                            <br>1234 Random</p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Mi na spletu!</h3>
+                        <ul class="list-inline">
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><span class="sr-only">Facebook</span><i class="fa fa-fw fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><span class="sr-only">Google Plus</span><i class="fa fa-fw fa-google-plus"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><span class="sr-only">Twitter</span><i class="fa fa-fw fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><span class="sr-only">Linked In</span><i class="fa fa-fw fa-linkedin"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><span class="sr-only">Dribble</span><i class="fa fa-fw fa-dribbble"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>O spletni strani:</h3>
+                        <p>Test Page</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; Pezde 2017
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
