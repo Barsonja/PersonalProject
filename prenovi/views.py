@@ -6,7 +6,7 @@ from .models import Post
 
 def index(request):
     recent_posts = Post.objects.order_by('-date')[:3]
-    return render(request, 'index.html', {'recent_posts': recent_posts})
+    return render(request, 'prenovi/index.html', {'recent_posts': recent_posts})
 
 class PostListView(generic.ListView):
     model = Post
