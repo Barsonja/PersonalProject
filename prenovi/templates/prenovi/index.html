@@ -48,6 +48,9 @@
     {% csrf_token %}
     {{ form.non_field_errors }}
     <div class="fieldWrapper">
+        {{ form.email.errors }}
+        {{ form.email.label_tag }}
+        {{ form.email|addclass:'form-control' }}
         {{ form.subject.errors }}
         {{ form.subject.label_tag }}
         {{ form.subject|addclass:'form-control' }}
