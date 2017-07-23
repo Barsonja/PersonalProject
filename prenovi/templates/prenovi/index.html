@@ -43,11 +43,22 @@
         </div>
     </header>
 
-
+{% load myfilters %}
 <form action="/contact-us/" method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit" />
+    {{ form.non_field_errors }}
+    <div class="fieldWrapper">
+        {{ form.subject.errors }}
+        {{ form.subject.label_tag }}
+        {{ form.subject|addclass:'form-control' }}
+        <span class="helptext">{{ form.subject.help_text }}</span>
+
+        {{ form.message.errors }}
+        {{ form.message.label_tag }}
+        {{ form.message|addclass:'form-control' }}
+        <span class="helptext">{{ form.message.help_text }}</span>
+    </div>
+    <input type="submit" value="Submit"/>
 </form>
 
 
