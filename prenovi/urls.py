@@ -20,4 +20,9 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^posts/$', views.PostListView.as_view(), name='posts'),
     url(r'post/(?P<pk>\d+)$', views.PostDetailView.as_view(), name='post-detail-view'),
+    url(r'^contractors/$', views.ContractorListView.as_view(), name='contractors'),
+    url(r'contractor/(?P<pk>\d+)$', views.ContractorDetailView.as_view(), name='contractor-detail-view'),
+    url(r'^workinstances/$', views.WorkInstanceListView.as_view(), name='workinstances'),
+    url(r'workinstance/(?P<pk>[-\w]+)', views.WorkInstanceDetailView.as_view(), name='workinstance-detail-view'),
+
 ]

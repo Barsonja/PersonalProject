@@ -35,14 +35,18 @@ def get_end_date():
 
 
 class WorkInstance(models.Model):
-    client_name=models.CharField(max_length=100)
+    client_name = models.CharField(max_length=100)
     title = models.CharField(max_length=100, help_text="Name of the project")
     id = models.UUIDField(primary_key=True, default=uuid.uuid4,
                           help_text="Unique ID for this particular workinstance  across whole Database")
-    contractor = models.ForeignKey('Contractor',null=True, on_delete=models.SET_NULL)
+    contractor = models.ForeignKey('Contractor', null=True, on_delete=models.SET_NULL)
     start_date = models.DateTimeField(default=datetime.today())
     end_date = models.DateTimeField(default=get_end_date)
     summary = models.TextField(max_length=1000, blank=True, null=True)
 
+    def get_absolute_url(self):
+        return reverse('workinstance-detail-view', args=[str(self.id)])
+
     def __str__(self):
         return self.title + ', ' + self.client_name
+

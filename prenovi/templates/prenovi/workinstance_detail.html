@@ -1,0 +1,11 @@
+{% extends "prenovi/base.html" %}
+
+{% block content %}
+<br><br><br><br>
+  <h1>Name: {{ workinstance.title }}</h1>
+  <p><strong>Contractor:</strong> {{ workinstance.contractor }}</p>
+  <p><strong>Client Name:</strong> {{ workinstance.client_name }}</p>
+  <p><strong>Start Date:</strong> {{ workinstance.start_date }}</p>
+  <p><strong>Summary:</strong> {{ workinstance.summary }}</p>
+
+{% endblock %}
