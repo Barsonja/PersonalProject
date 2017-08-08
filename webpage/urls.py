@@ -21,4 +21,6 @@ urlpatterns = [
     url(r'^prenovi/', include('prenovi.urls')),
     url(r'^$', RedirectView.as_view(url='/prenovi/', permanent=True)),
     url(r'^contact-us/', include('send_email.urls')),
+#Add Django site authentication urls (for login, logout, password management)
+    url(r'^accounts/', include('django.contrib.auth.urls')),
 ]
