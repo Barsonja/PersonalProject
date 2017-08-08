@@ -9,7 +9,7 @@
 
       {% for workinstance in workinstance_list %}
       <li>
-        <a href="{{ workinstance.get_absolute_url }}">{{ workinstance.title }}</a>
+        <a href="{{ workinstance.get_absolute_url }}">{{ workinstance.title }} {{ workinstance.contractor }}</a>
       </li>
       {% endfor %}
 

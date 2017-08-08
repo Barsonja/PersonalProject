@@ -35,10 +35,11 @@ def get_end_date():
 
 
 class WorkInstance(models.Model):
-    client_name = models.CharField(max_length=100)
-    title = models.CharField(max_length=100, help_text="Name of the project")
+
     id = models.UUIDField(primary_key=True, default=uuid.uuid4,
                           help_text="Unique ID for this particular workinstance  across whole Database")
+    client_name = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, help_text="Name of the project")
     contractor = models.ForeignKey('Contractor', null=True, on_delete=models.SET_NULL)
     start_date = models.DateTimeField(default=datetime.today())
     end_date = models.DateTimeField(default=get_end_date)
