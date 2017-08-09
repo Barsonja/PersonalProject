@@ -10,7 +10,7 @@ from send_email.forms import ContactForm
 def index(request):
     recent_posts = Post.objects.order_by('-date')[:3]
     form = ContactForm()
-    return render(request, 'prenovi/index.html', {'recent_posts': recent_posts, 'form': form})
+    return render(request, 'prenovi/index.html')
 
 class PostListView(generic.ListView):
     model = Post

@@ -1,118 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-
+  <head>
+    {% load static %}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <link rel="shortcut icon" href="{% static 'prenovi/ico/favicon.ico' %}">
 
-    {% block title %}<title>Prenovi</title>{% endblock %}
+    <title>Working title</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- CSS Plugins -->
+    <link rel="stylesheet" href="{% static 'prenovi/plugins/ionicons/css/ionicons.min.css' %}">
 
-    <!-- Custom Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <!-- CSS Global -->
+    <!--build:css static/css/theme.css-->
+    <link rel="stylesheet" href="{% static 'prenovi/css/theme.css' %}">
+    <!--endbuild-->
 
-    {% load static %}
-    <link href="{% static 'prenovi/css/freelancer.min.css' %}" rel="stylesheet">
-    <link href="{% static 'prenovi/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
-</head>
+  </head>
+  <body data-spy="scroll" data-target="#navbar_main" data-offset="80">
 
-<body>
-  <!-- Navigation -->
-  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+    <!-- PRELOADER
+    ================================================== -->
+    <div class="preloader">
+      <img src="{% static 'prenovi/img/spinner.svg' %}" alt="Loading..." class="preloader__spinner">
+    </div>
+
+    <!-- NAVBAR
+    ================================================== -->
+    <nav class="navbar navbar-fixed-top navbar-default">
       <div class="container">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header page-scroll">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                  <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-              </button>
-              <a class="navbar-brand" href="#page-top">Business Name</a>
-          </div>
 
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav navbar-right">
-                  <li class="hidden">
-                      <a href="#page-top"></a>
-                  </li>
-                  <li class="page-scroll">
-                      <a href="#portfolio">GALERIJA</a>
-                  </li>
-                  <li class="page-scroll">
-                      <a href="#about">O NAS</a>
-                  </li>
-                  <li class="page-scroll">
-                      <a href="#contact">KONTAKT</a>
-                  </li>
-                  {% if user.is_authenticated %}
-                    <li class="page-scroll">User: {{ user.get_username }}</li>
-                    <li class="page-scroll"><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
-                  {% else %}
-                    <li class="page-scroll"><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
-                  {% endif %}
-              </ul>
-          </div>
-          <!-- /.navbar-collapse -->
-      </div>
-      <!-- /.container-fluid -->
-  </nav>
-<br><br><br><br><br><br><br>
-      {% block content %}
+        <!-- Brand name -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar_main" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="layouts.html">Working title yo!</a>
+        </div>
 
-      {% endblock %}
-    <!-- Footer -->
-    <footer class="text-center">
-        <div class="footer-above">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-col col-md-4">
-                        <h3>Lokacija</h3>
-                        <p>Neki random
-                            <br>1234 Random</p>
-                    </div>
-                    <div class="footer-col col-md-4">
-                        <h3>Mi na spletu!</h3>
-                        <ul class="list-inline">
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><span class="sr-only">Facebook</span><i class="fa fa-fw fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><span class="sr-only">Google Plus</span><i class="fa fa-fw fa-google-plus"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><span class="sr-only">Twitter</span><i class="fa fa-fw fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><span class="sr-only">Linked In</span><i class="fa fa-fw fa-linkedin"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><span class="sr-only">Dribble</span><i class="fa fa-fw fa-dribbble"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer-col col-md-4">
-                        <h3>O spletni strani:</h3>
-                        <p>Test Page</a>.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-below">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        Copyright &copy; Pezde 2017
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbar_main">
+
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active">
+              <a href="#section_banner">Začetek</a>
+            </li>
+            <li><a href="#section_services">O nas</a></li>
+            <li><a href="#section_features">Storitve</a></li>
+            <li><a href="#section_news">Novice</a></li>
+            <li><a href="#section_contact">Kontakt</a></li>
+          </ul>
+
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+
+
+{% block content %}
+
+
+
+
+{% endblock %}
+
+
+    <!-- FOOTER
+    ================================================== -->
+    <footer class="section_footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-9">
+
+            <p class="footer__copyright">
+              <span id="footer__year">2017</span> Rok in Žan, projekt št.1 haha</a>
+            </p>
+
+          </div>
+          <div class="col-sm-3">
+
+            <ul class="footer__social">
+              <li>
+                <a class="facebook" href="#">             <!-- Add facebook page link here -->
+                  <i class="ion-social-facebook"></i>
+                </a>
+              </li>
+            </ul>
+
+          </div>
+        </div> <!-- / .row -->
+      </div> <!-- / .container -->
     </footer>
-</body>
-</html>
+
+    <!-- JAVASCRIPT
+    ================================================== -->
+
+    <!-- JS Global -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="{% static 'prenovi/bootstrap/js/bootstrap.min.js' %}"></script>
+
+    <!-- JS Plugins -->
+    <script src="{% static 'prenovi/plugins/smoothscroll/smoothscroll.min.js' %}"></script>
+    <script src="{% static 'prenovi/plugins/backstretch/jquery.backstretch.min.js' %}"></script>
+    <script src="{% static 'prenovi/plugins/contact-form/contact.js' %}"></script>
+    <script src="{% static 'prenovi/plugins/waypoints/jquery.waypoints.min.js' %}"></script>
+
+    <!-- JS Custom -->
+    <!--build:js /js/theme.js -->
+    <script src="{% static 'prenovi/js/theme.js' %}"></script>
+    <!-- endbuild -->
+    <script src="{% static 'prenovi/js/custom.js' %}"></script>
+
+    </body>
+    </html>
