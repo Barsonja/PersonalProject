@@ -9,7 +9,7 @@
 
   <!-- Images -->
   <div class="banner__carousel__img"
-       data-images="static/img/5.jpg">
+       data-images="{% static 'prenovi/img/5.jpg' %}">
   </div>
 
   <div class="container">
@@ -37,8 +37,8 @@
 
             <!-- Contact form on top of page -->
 
-            <form class="contact__container__form" id="form_sendemail">
-
+            <form class="contact__container__form" action="/contact-us/send-email/" method="post">
+              {% csrf_token %}
               <!-- Header -->
               <div class="form-group">
                 <h3>Kontaktirajte nas! </h3>
@@ -61,6 +61,12 @@
                 <span class="help-block"></span>
               </div>
 
+              <div class="form-group">
+                <label for="subject" class="sr-only">Vaše sporočilo</label>
+                <textarea name="subject" class="form-control" id="subject" placeholder="Vnesite zadevo"></textarea>
+                <span class="help-block"></span>
+              </div>
+
               <!-- Message -->
               <div class="form-group">
                 <label for="message" class="sr-only">Vaše sporočilo</label>
@@ -69,9 +75,7 @@
               </div>
 
               <!-- Submit -->
-              <button type="submit" class="btn btn-primary">
-                POŠLJI
-              </button>
+               <input type="submit" class="btn btn-primary" value="Submit"/>
 
             </form>
 
@@ -280,7 +284,7 @@
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam nostrum delectus quod eligendi distinctio. Fugiat sequi ad dolor id est voluptas, ab, optio obcaecati, corporis dolore dignissimos accusantium hic ratione?
           </p>
           <footer>
-            <img src="static/img/avatar_3.png" class="img-responsive" alt="...">
+            <img src="{% static 'prenovi/img/avatar_3.png' %}" class="img-responsive" alt="...">
             <div>
               <h3 class="h5">John Doe</h3>
               <cite>Lorem ipsum</cite>
@@ -296,7 +300,7 @@
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam nostrum delectus quod eligendi distinctio. Fugiat sequi ad dolor id est voluptas, ab, optio obcaecati, corporis dolore dignissimos accusantium hic ratione?
           </p>
           <footer>
-            <img src="static/img/avatar_2.png" class="img-responsive" alt="...">
+            <img src="{% static 'prenovi/img/avatar_2.png' %}" class="img-responsive" alt="...">
             <div>
               <h3 class="h5">Richard Roe</h3>
               <cite>Lorem ipsum</cite>
@@ -312,7 +316,7 @@
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam nostrum delectus quod eligendi distinctio. Fugiat sequi ad dolor id est voluptas, ab, optio obcaecati, corporis dolore dignissimos accusantium hic ratione?
           </p>
           <footer>
-            <img src="static/img/avatar_1.png" class="img-responsive" alt="...">
+            <img src="{% static 'prenovi/img/avatar_1.png' %}" class="img-responsive" alt="...">
             <div>
               <h3 class="h5">Judy Doe</h3>
               <cite>Lorem ipsum</cite>
@@ -347,7 +351,7 @@
 
         <a href="#" class="news__item animate-sm-step-0" data-animate="animate-up">
           <div class="news__item__img">
-            <img src="static/img/2.jpg" class="img-responsive" alt="...">
+            <img src="{% static 'prenovi/img/2.jpg' %}" class="img-responsive" alt="...">
             <time datetime="2017-01-12" class="news__item__img__date">
               Jan <span>12</span>
             </time>
@@ -367,7 +371,7 @@
 
         <a href="#" class="news__item animate-sm-step-1" data-animate="animate-up">
           <div class="news__item__img">
-            <img src="static/img/5.jpg" class="img-responsive" alt="...">
+            <img src="{% static 'prenovi/img/5.jpg' %}" class="img-responsive" alt="...">
             <time datetime="2017-02-17" class="news__item__img__date">
               Jan <span>24</span>
             </time>
@@ -387,7 +391,7 @@
 
         <a href="#" class="news__item animate-sm-step-2" data-animate="animate-up">
           <div class="news__item__img">
-            <img src="static/img/7.jpg" class="img-responsive" alt="...">
+            <img src="{% static 'prenovi/img/7.jpg' %}" class="img-responsive" alt="...">
             <time datetime="2017-02-25" class="news__item__img__date">
               Apr <span>30</span>
             </time>

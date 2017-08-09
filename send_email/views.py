@@ -24,6 +24,7 @@ def send_email(request):
     if form.is_valid():
         # process the data in form.cleaned_data as required
         subject = form.cleaned_data['subject']
+        name = form.cleaned_data['name']
         email = form.cleaned_data['email']
         message = form.cleaned_data['message']
 
